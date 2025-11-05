@@ -27,8 +27,7 @@ function Review({reviewsArr}){
         setCurrIndex(randomIndex);
     }
 
-    // let authorId = `author-${reviewsArr[currIndex].id}`;
-    // console.log(authorId)
+ 
     return (
         <div className="review" style={{border: "1px solid blue", display: "flex", flexDirection: "column", justifyContent: "center", padding: 10, height: 240, width: 480, gap: 10}}>
             <div style={{display: 'flex', gap: 5}}>
@@ -36,7 +35,7 @@ function Review({reviewsArr}){
                     <img className="person-img" style={{width: '120px', height: '100%', objectFit: 'cover', borderRadius: '5%',display: 'flex', alignItems: 'center', justifyContent: 'center'}} src={reviewsArr[currIndex].image} alt="" />
                 </div>
                 <div style={{border: "1px solid black", padding: 5}}>
-                    <p id={`author-${reviewsArr[currIndex].id}`} className="author">{reviewsArr[currIndex].name}</p>
+                    <p id={`author-${currIndex}`} className="author">{reviewsArr[currIndex].name}</p>
                     <p className="job">{reviewsArr[currIndex].job}</p>
                     <p className="info">{reviewsArr[currIndex].text}</p>
                 </div>
