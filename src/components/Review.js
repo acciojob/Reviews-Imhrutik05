@@ -27,6 +27,7 @@ function Review({reviewsArr}){
         setCurrIndex(randomIndex);
     }
 
+    let authorId = `author-${reviewsArr[currIndex].id}`;
     return (
         <div className="review" style={{border: "1px solid blue", display: "flex", flexDirection: "column", justifyContent: "center", padding: 10, height: 240, width: 480, gap: 10}}>
             <div style={{display: 'flex', gap: 5}}>
@@ -34,14 +35,14 @@ function Review({reviewsArr}){
                     <img style={{width: '120px', height: '100%', objectFit: 'cover', borderRadius: '5%',display: 'flex', alignItems: 'center', justifyContent: 'center'}} src={reviewsArr[currIndex].image} alt="" />
                 </div>
                 <div style={{border: "1px solid black", padding: 5}}>
-                    <p id="author-id">{reviewsArr[currIndex].name}</p>
+                    <p id={authorId}>{reviewsArr[currIndex].name}</p>
                     <p>{reviewsArr[currIndex].job}</p>
                     <p>{reviewsArr[currIndex].text}</p>
                 </div>
             </div>
             <div style={{ display: 'flex',flexDirection: 'row', justifyContent: 'space-between'}}>
                 <button onClick={prevHandler} className="prev-btn">Prev</button>
-                <button onClick={surpriseHandler}>Surprise Me</button>
+                <button onClick={surpriseHandler} className="random-btn">Surprise Me</button>
                 <button onClick={nextHandler} className="next-btn">Next</button>
             </div>
         </div>
